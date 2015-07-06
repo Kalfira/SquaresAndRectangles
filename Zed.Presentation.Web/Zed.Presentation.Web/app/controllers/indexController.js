@@ -5,6 +5,6 @@
 
     function indexController() {
         var vm = this;
-        vm.message = 'Index Controller!';
+        vm.message = 'This is the index page!';
     }
 })();

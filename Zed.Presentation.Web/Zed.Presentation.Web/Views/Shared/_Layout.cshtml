@@ -9,19 +9,20 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container" ng-controller="TemplateController">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="#/" class="navbar-brand">Zed</a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" style="float: right;">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                    <li><a href="#/">Home</a></li>
+                    <li ng-hide="isLoggedIn()"><a href="#/logout">Logout</a></li>
+                    <li ng-hide="isLoggedOut()"><a href="#/login">Login</a></li>
                 </ul>
             </div>
         </div>
