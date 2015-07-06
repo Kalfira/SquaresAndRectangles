@@ -17,6 +17,7 @@ namespace Zed.Data.Repositories
         /// </summary>
         public IQueryable<T> Query<T>() where T : class
         {
+            //Test jfizzys branch
             return _dataContext.Set<T>().AsQueryable();
         }
 
