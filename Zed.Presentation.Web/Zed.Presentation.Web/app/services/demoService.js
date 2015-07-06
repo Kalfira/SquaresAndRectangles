@@ -7,14 +7,14 @@
         var service = {};
         var deferred = $q.defer();
 
-        service.getInfo = getInfo;
+        service.getResult = getResult;
 
-        function getInfo(url) {
+        function getResult(url) {
             var deferred = $q.defer();
             $http({
                 url: '/api/url',
-                method: 'GET',
-                data: URL,
+                method: 'POST',
+                data: url
             }).success(function(data) {
                 if (data) {
                     deferred.resolve(data);
