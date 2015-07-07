@@ -54,7 +54,6 @@
     <Compile Include="Models\RedditJson.cs" />
     <Compile Include="Models\RedditsSearch.cs" />
     <Compile Include="Models\RedditsXml.cs" />
-    <Compile Include="Models\Request.cs" />
     <Compile Include="Models\RestClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

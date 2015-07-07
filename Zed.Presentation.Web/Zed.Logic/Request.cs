@@ -7,10 +7,9 @@ using System.Web;
 using System.Net;
 using System.IO;
 
-namespace Zed.Domain.Models
-{  
-    //Internal sealed
-    public class redditRequest
+namespace Zed.Logic
+{
+    internal sealed class redditRequest
     {
         internal string Url
         {

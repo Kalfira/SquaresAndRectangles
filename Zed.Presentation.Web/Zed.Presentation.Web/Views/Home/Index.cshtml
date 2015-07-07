@@ -1,1 +1,18 @@
 ﻿<ng-view></ng-view>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("Name");
+        @Html.Password("Password");
+        <input type="submit" value="Sign In">
+        <br />
+        @Html.TextBox("Subreddit");
+        @Html.Label("Subreddit");
+        @Html.DropDownListFor()
+    <input type="submit" value="Sign In">
+
+        <br />
+        
+    }
+</div>
