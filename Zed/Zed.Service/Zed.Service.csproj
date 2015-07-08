@@ -93,7 +93,6 @@
     <Compile Include="Identity\ApplicationOAuthProvider.cs" />
     <Compile Include="Identity\IdentityConfig.cs" />
     <Compile Include="Identity\StartIdentity.cs" />
-    <Compile Include="Identity\ValuesController.cs" />
     <Compile Include="Models\About.cs" />
     <Compile Include="Models\Comments.cs" />
     <Compile Include="Models\Login.cs" />
