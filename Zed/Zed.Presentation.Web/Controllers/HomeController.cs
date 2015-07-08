@@ -1,14 +1,25 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using Newtonsoft.Json;
+using Zed.Presentation.Web.Models;
+using Zed.Presentation.Web.Repositories;
 
 namespace Zed.Presentation.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            ViewBag.Title = "Home Page";
+            var result = await UniversalResponseRepository.GetJsonAsync<UniversalResponse>("thingsjohnsnowknows");
+            //var json = JsonConvert.DeserializeObject<UniversalResponse>(result);
 
-            return View();
+            return View(result);
         }
 
 

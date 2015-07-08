@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Zed.Service.Models
+namespace Zed.Service.Modules.Reddit.Models
 {
     [Serializable]
     public sealed class redditChildrenDataItem

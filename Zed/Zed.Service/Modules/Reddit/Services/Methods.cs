@@ -5,8 +5,9 @@ using System.Net;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Zed.Service.Models;
+using Zed.Service.Modules.Reddit.Models;
 
-namespace Zed.Service.Services.RedditService
+namespace Zed.Service.Modules.Reddit.Services
 {
     public class RedditMethods
     {

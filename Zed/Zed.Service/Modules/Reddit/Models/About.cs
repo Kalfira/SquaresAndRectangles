@@ -1,4 +1,4 @@
-﻿namespace Zed.Service.Models
+﻿namespace Zed.Service.Modules.Reddit.Models
 {
     public class redditAboutData
     {

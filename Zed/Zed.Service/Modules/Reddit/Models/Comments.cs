@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
-namespace Zed.Service.Models
+namespace Zed.Service.Modules.Reddit.Models
 {
     public class redditCommentSubCommentsRepliesChildData
     {

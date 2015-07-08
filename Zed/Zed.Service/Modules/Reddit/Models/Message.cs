@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Zed.Service.Models
+namespace Zed.Service.Modules.Reddit.Models
 {
     public class redditMessageChildData
     {

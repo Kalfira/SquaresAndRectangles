@@ -1,15 +1,27 @@
-﻿<div>
-    @using (Html.BeginForm())
-    {
-        @Html.TextBox("Name");
-        @Html.Password("Password");
-        <input type="submit" value="Sign In">
-        <br />
-        @Html.TextBox("Subreddit");
-        @Html.Label("Subreddit");
-    <input type="submit" value="Sign In">
+﻿@model Zed.Presentation.Web.Models.UniversalResponse
 
-        <br />
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>UniversalResponse</h4>
+    <hr />
+    @foreach (var response in Model.UniversalItems)
+    {
+        <div>@response.VoteFunctions</div><br/>
+        <div>@response.Content</div><br/>
+        <div>@foreach (var child in response.InfoList)
+             {
+                 <div>@child</div>
+             }</div><br/>
         
+
     }
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

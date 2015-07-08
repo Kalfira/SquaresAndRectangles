@@ -1,16 +1,30 @@
 ﻿using Newtonsoft.Json;
 using Zed.Service.Models;
+using Zed.Service.Modules.Reddit.Models;
 
 namespace Zed.Service.Services
 {
     public class UrlService
     {
-        static RestClient client = new RestClient();
-        public static string GetDemo(string Url)
+        readonly RestClient _client = new RestClient("http://reddit.com/r/");
+        public UniversalReport GetDemo(string url)
         {
-            var result = client.MakeRequest(Url);
+            url = url + "/about/moderators.json";
+            var result = _client.MakeRequest(url);
             var deserialized = JsonConvert.DeserializeObject<RedditDemo>(result);
-            return "Demo Done!";
+            UniversalReport report = new UniversalReport();
+            foreach (var item in deserialized.data.children)
+            {
+                report.UniversalItems.Add(new UniversalItem
+                {
+                    Content = item.name,
+                    InfoList = item.mod_permissions,
+                    VoteFunctions = "Reddit"
+                });
+            }
+            
+            //var reserialized = JsonConvert.SerializeObject(report);
+            return report;
         }
     }
 }

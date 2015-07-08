@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 
-namespace Zed.Api
+namespace Zed.Service.Modules.Reddit.Models
 {
     internal sealed class redditRequest
     {
