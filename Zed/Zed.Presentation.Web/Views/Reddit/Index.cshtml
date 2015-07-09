@@ -1,0 +1,29 @@
+﻿@model Zed.Presentation.Web.Models.UniversalResponse
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Squares and Rectangles</h2>
+
+<div>
+    <h4>UniversalResponse</h4>
+    <hr />
+    @foreach (var response in Model.UniversalItems)
+    {
+        <div>@response.VoteFunctions</div><br />
+        <div>@response.Content</div><br />
+        <div>
+            @foreach (var child in response.InfoList)
+            {
+                <div>@child</div>
+            }
+    </div><br />
+
+
+    }
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
