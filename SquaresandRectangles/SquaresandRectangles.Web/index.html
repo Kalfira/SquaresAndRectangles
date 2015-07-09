@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html ng-app="Zed">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Squares and Rectangles</title>
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container" ng-controller="TemplateController">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#/" class="navbar-brand">Zed</a>
+            </div>
+            <div class="navbar-collapse collapse" style="float: right;">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/">Home</a></li>
+                    <li ng-hide="isLoggedIn()"><a href="#/logout">Logout</a></li>
+                    <li ng-hide="isLoggedOut()"><a href="#/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <ng-view></ng-view>
+        <hr />
+        <footer>
+            <p>&copy; 2015 - Zane Degner</p>
+        </footer>
+    </div>
+    <script src="/Scripts/jquery-1.9.1.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-route.js"></script>
+    <script src="/app.js"></script>
+    <script src="controllers/demoController.js"></script>
+    <script src="controllers/indexController.js"></script>
+    <script src="controllers/loginController.js"></script>
+    <script src="controllers/logoutController.js"></script>
+    <script src="controllers/templateController.js"></script>
+    <script src="services/authService.js"></script>
+    <script src="services/demoService.js"></script>
+</body>
+</html>
