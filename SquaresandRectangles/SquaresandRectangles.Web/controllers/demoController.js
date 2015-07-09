@@ -12,7 +12,8 @@
             vm.isLoading = true;
             var entry = vm.url;
 
-            demoService.getResult(entry).then(function() {
+            demoService.getResult(entry).then(function(result) {
+                vm.message = result;
                 vm.isLoading = false;
                 console.log("Done!");
             });

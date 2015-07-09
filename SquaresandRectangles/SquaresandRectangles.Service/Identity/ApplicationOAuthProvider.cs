@@ -26,8 +26,8 @@ namespace SquaresandRectangles.Service.Identity
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "origin", "x-requested-with", "accept", "authorization" });
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
-
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
             if (user == null)

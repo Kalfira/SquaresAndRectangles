@@ -11,6 +11,7 @@ namespace SquaresandRectangles.Api
     {
         public void Configuration(IAppBuilder app)
         {
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             StartIdentity.ConfigureAuth(app);
         }
     }

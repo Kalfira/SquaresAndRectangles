@@ -12,9 +12,8 @@
         function getResult(url) {
             var deferred = $q.defer();
             $http({
-                url: '/api/url',
-                method: 'POST',
-                data: url
+                url: 'http://localhost:1337/api/reddit/funny',
+                method: 'GET'
             }).success(function(data) {
                 if (data) {
                     deferred.resolve(data);

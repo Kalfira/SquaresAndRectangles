@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
@@ -17,6 +18,8 @@ namespace SquaresandRectangles.Service.Identity
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public static void ConfigureAuth(IAppBuilder app)
         {
+            app.UseCors(CorsOptions.AllowAll);
+
             // Configure the db context and user manager to use a single instance per request
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
@@ -28,13 +31,15 @@ namespace SquaresandRectangles.Service.Identity
 
             // Configure the application for OAuth based flow
             PublicClientId = "self";
+            var path = new PathString("/api/Account/ExternalLogin");
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
                 TokenEndpointPath = new PathString("/Token"),
                 Provider = new ApplicationOAuthProvider(PublicClientId),
                 AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
-                AllowInsecureHttp = true
+                AllowInsecureHttp = true,
+
             };
 
             // Enable the application to use bearer tokens to authenticate users
