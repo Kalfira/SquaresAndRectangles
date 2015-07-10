@@ -7,6 +7,7 @@ namespace SquaresandRectangles.Api.Controllers
     public class RedditController : ApiController
     {
         readonly UrlService _service = new UrlService();
+        readonly SubredditService _subreddit = new SubredditService();
 
         public string Get()
         {
@@ -14,7 +15,8 @@ namespace SquaresandRectangles.Api.Controllers
         }
         public UniversalReport Get(string id)
         {
-            var results = _service.GetDemo(id);
+            //var results = _service.GetDemo(id);
+            var results = _subreddit.GetDemo(id);
             return results;
         }
     }
