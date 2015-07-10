@@ -16,9 +16,10 @@
 
             $http({
                 url: 'http://localhost:1337/Token',
-                method: 'GET',
+                method: 'POST',
                 data: 'username=' + username + '&password=' + password + '&grant_type=password',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                //, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers' : 'X-Custom-Header' }
             }).success(function (data) {
                 $window.sessionStorage.setItem('token', data.access_token);
                 deferred.resolve();
