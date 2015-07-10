@@ -26,8 +26,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaresandRectangles.Api", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaresandRectangles.Web", "SquaresandRectangles.Web\SquaresandRectangles.Web.csproj", "{7AAEA6F5-D89F-49D4-BB97-E89BD5747D30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,16 +78,6 @@ Global
 		{7AAEA6F5-D89F-49D4-BB97-E89BD5747D30}.Release|ARM.ActiveCfg = Release|Any CPU
 		{7AAEA6F5-D89F-49D4-BB97-E89BD5747D30}.Release|x64.ActiveCfg = Release|Any CPU
 		{7AAEA6F5-D89F-49D4-BB97-E89BD5747D30}.Release|x86.ActiveCfg = Release|Any CPU
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}.Release|ARM.ActiveCfg = Release|Any CPU
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}.Release|x64.ActiveCfg = Release|Any CPU
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +87,5 @@ Global
 		{1DB3C4E0-620A-4448-923A-862048C6E5B6} = {1492975F-946A-4DAE-A29E-A818630D55A3}
 		{D67F70B3-5CC1-4677-B1F0-234E485A003F} = {93062230-13FC-40B2-9371-54A4494DE6A6}
 		{7AAEA6F5-D89F-49D4-BB97-E89BD5747D30} = {8EB757F3-456A-4914-9E61-8B43CC51FBC6}
-		{C86FDC62-C0FE-4C23-B8B8-C224C8AD5576} = {93062230-13FC-40B2-9371-54A4494DE6A6}
 	EndGlobalSection
 EndGlobal
