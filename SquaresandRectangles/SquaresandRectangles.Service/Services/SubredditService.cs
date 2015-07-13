@@ -18,15 +18,19 @@ namespace SquaresandRectangles.Service.Services
             var result = _client.MakeRequest(url);
             var deserialized = JsonConvert.DeserializeObject<redditJson>(result);
             UniversalReport report = new UniversalReport();
-            foreach (var item in deserialized.data.children)
+            foreach(var item in deserialized.data.children)
             {
-                report.UniversalItems.Add(new UniversalItem
+                var superitem = new UniversalItem
                 {
-                    Content = item.data.url,
-                    InfoList = item.data.title,
-                    VoteFunctions = "Reddit"
-                });
+                    Content = item.data.title,
+                    Info1 = item.data.author,
+                    Info2 = item.data.url,
+                    PostType = "r"
+                };
+
+                report.UniversalItems.Add(superitem);
             }
+            
             return report;
         }
     }
