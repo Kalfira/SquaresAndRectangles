@@ -15,6 +15,10 @@
                 templateUrl: './views/login.html',
                 controller: 'LoginController',
                 controllerAs: 'vm'
+            }).when('/z', {
+            templateUrl: './views/zed.html',
+            controller: 'ZedController',
+            controllerAs: 'vm'
             }).when('/logout', {
                 templateUrl: './views/index.html',
                 controller: 'LogoutController',
@@ -25,5 +29,4 @@
     }
 
     Config.$inject = ['$routeProvider'];
-
 })();
