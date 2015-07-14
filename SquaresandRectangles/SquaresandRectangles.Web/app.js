@@ -23,6 +23,10 @@
                 templateUrl: './views/index.html',
                 controller: 'LogoutController',
                 redirectTo: '/'
+            }).when('/comment', {
+                templateUrl: './views/comments.html',
+                controller: 'commentController',
+                controllerAs: 'vm'
             }).otherwise({
                 redirectTo: '/'
             });

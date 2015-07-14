@@ -1,0 +1,17 @@
+﻿<p>{{vm.message}}</p>
+
+<div></div>
+
+<form ng-hidden="vm.isLoading" novalidate ng-submit="vm.getInfo()">
+    <input ng-model="vm.perma" placeholder="Url" />
+
+    <input type="submit" value="Submit" />
+
+</form>
+
+<table>
+    <tr ng-repeat="item in vm.message.UniversalItem">
+        <td>"item.author"</td>
+        <td><a ng-href="'http://localhost:1337/api/reddit/' + {{item.permalink}}">Comments</a></td>
+    </tr>
+</table>

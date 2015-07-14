@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SquaresandRectangles.Service.Models;
 using System.Collections.Generic;
 
 namespace SquaresandRectangles.Service.Modules.Reddit.Models
@@ -81,7 +82,7 @@ namespace SquaresandRectangles.Service.Modules.Reddit.Models
         public redditCommentSubCommentsChildData data { get; set; }
     }
 
-    public class redditCommentSubCommentsData
+    public class redditCommentSubCommentsData : UniversalItem
     {
         public string modhash { get; set; }
         public List<redditCommentSubCommentsChild> children { get; set; }
@@ -89,14 +90,14 @@ namespace SquaresandRectangles.Service.Modules.Reddit.Models
         public object before { get; set; }
     }
 
-    public class redditCommentSubComments
+    public class redditCommentSubComments : UniversalItem
     {
         public string kind { get; set; }
         public redditCommentSubCommentsData data { get; set; }
     }
 
 
-    public class redditCommentRepliesChildData
+    public class redditCommentRepliesChildData : UniversalItem
     {
         public string subreddit_id { get; set; }
         public object banned_by { get; set; }
@@ -132,7 +133,7 @@ namespace SquaresandRectangles.Service.Modules.Reddit.Models
         public redditCommentRepliesChildData data { get; set; }
     }
 
-    public class redditCommentRepliesData
+    public class redditCommentRepliesData : UniversalItem
     {
         public string modhash { get; set; }
         public List<redditCommentRepliesChild> children { get; set; }
@@ -140,17 +141,17 @@ namespace SquaresandRectangles.Service.Modules.Reddit.Models
         public object before { get; set; }
     }
 
-    public class redditCommentReplies
+    public class redditCommentReplies : UniversalItem
     {
         public string kind { get; set; }
         public redditCommentRepliesData data { get; set; }
     }
 
-    public class redditCommentsEmbedMedia
+    public class redditCommentsEmbedMedia : UniversalItem
     {
     }
 
-    public class redditCommentsChildData
+    public class redditCommentsChildData : UniversalItem
     {
         public string domain { get; set; }
         public object banned_by { get; set; }
@@ -197,13 +198,13 @@ namespace SquaresandRectangles.Service.Modules.Reddit.Models
         public List<string> children { get; set; }
     }
 
-    public class redditCommentsChild
+    public class redditCommentsChild : UniversalItem
     {
         public string kind { get; set; }
         public redditCommentsChildData data { get; set; }
     }
 
-    public class redditCommentsData
+    public class redditCommentsData : UniversalItem
     {
         public string modhash { get; set; }
         public List<redditCommentsChild> children { get; set; }
@@ -211,7 +212,7 @@ namespace SquaresandRectangles.Service.Modules.Reddit.Models
         public object before { get; set; }
     }
 
-    public class redditCommentsJson
+    public class redditCommentsJson : UniversalItem
     {
         public string kind { get; set; }
         public redditCommentsData data { get; set; }
