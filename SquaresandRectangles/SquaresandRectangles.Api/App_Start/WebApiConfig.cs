@@ -1,4 +1,5 @@
 ﻿using Microsoft.Owin.Security.OAuth;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace SquaresandRectangles.Api
@@ -13,6 +14,7 @@ namespace SquaresandRectangles.Api
             // Web API routes
             config.MapHttpAttributeRoutes();
             config.SuppressDefaultHostAuthentication();
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
             config.EnableCors();
             config.Routes.MapHttpRoute(

@@ -4,19 +4,21 @@ using System.Web.Http;
 
 namespace SquaresandRectangles.Api.Controllers
 {
+    [RoutePrefix("r")]
     public class RedditController : ApiController
     {
-        readonly UrlService _service = new UrlService();
-        readonly SubredditService _subreddit = new SubredditService();
+        readonly RedditService _reddit = new RedditService();
 
+        [Route("")]
         public string Get()
         {
             return "You didn't provide a subreddit to check!";
         }
+        [Route("{id}")]
         public UniversalReport Get(string id)
         {
             //var results = _service.GetDemo(id);
-            var results = _subreddit.GetDemo(id);
+            var results = _reddit.GetDemo(id);
             return results;
         }
     }

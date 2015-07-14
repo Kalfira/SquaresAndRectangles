@@ -1,10 +1,39 @@
-﻿<h1>{{vm.message}}</h1>
+﻿<form ng-hide="vm.isLoading" novalidate ng-submit="vm.getInfo()">
+    <input ng-model="vm.subreddit" placeholder="Subreddit Name"/>
 
-<div></div>
-
-<form ng-hidden="vm.isLoading" novalidate ng-submit="vm.getInfo()">
-    <input ng-model="vm.url" placeholder="Url" />
-
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Submit"/>
 
 </form>
+
+<table ng-hide="vm.tableHidden" class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Content</th>
+            <th>PostType</th>
+            <th>Vote Functions</th>
+            <th>Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in vm.info.UniversalItems">
+            <td><a ng-href="{{item.Content}}">{{item.InfoList[0].Name}}</a></td>
+            <td>{{item.PostType}}</td>
+            <td>{{item.VoteFunctions}}</td>
+            <td>{{item.InfoList[0].Data}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<br/>
+<br/>
+<div ng-hide="vm.isLoading">
+    <form ng-hidden="false" novalidate ng-submit="vm.getZed()">
+        <input ng-model="vm.zed" placeholder="Enter URL of Zed Instance" />
+
+        <input type="submit" value="Submit" />
+
+    </form>
+</div>
+<h1>{{vm.message}}</h1>
+ 

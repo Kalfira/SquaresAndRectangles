@@ -109,8 +109,10 @@
     <Compile Include="Identity\ChallengeResult.cs" />
     <Compile Include="Identity\IdentityConfig.cs" />
     <Compile Include="Identity\StartIdentity.cs" />
+    <Compile Include="Models\IUniversalItemInfo.cs" />
     <Compile Include="Models\RestClient.cs" />
     <Compile Include="Models\UniversalItem.cs" />
+    <Compile Include="Models\UniversalItemInfo.cs" />
     <Compile Include="Models\UniversalReport.cs" />
     <Compile Include="Modules\Reddit\Models\About.cs" />
     <Compile Include="Modules\Reddit\Models\Comments.cs" />
@@ -126,8 +128,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DbService.cs" />
     <Compile Include="Services\IDbService.cs" />
-    <Compile Include="Services\SubredditService.cs" />
-    <Compile Include="Services\UrlService.cs" />
+    <Compile Include="Services\RedditService.cs" />
+    <Compile Include="Services\ZedService.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

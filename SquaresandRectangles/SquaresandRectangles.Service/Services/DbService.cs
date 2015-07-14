@@ -9,13 +9,14 @@ namespace SquaresandRectangles.Service.Services
 
         public DbService()
         {
-            this._repo = new GenericRepository();
+            _repo = new GenericRepository();
         }
         [Inject]
         public DbService(IGenericRepository repo)
         {
-            this._repo = repo;
+            _repo = repo;
         }
+
     }
 
 

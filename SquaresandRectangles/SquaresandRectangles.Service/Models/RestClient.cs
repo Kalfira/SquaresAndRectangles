@@ -23,21 +23,21 @@ namespace SquaresandRectangles.Service.Models
         {
             EndPoint = "";
             Method = HttpVerb.GET;
-            ContentType = "text/xml";
+            ContentType = "application/json";
             PostData = "";
         }
         public RestClient(string endpoint)
         {
             EndPoint = endpoint;
             Method = HttpVerb.GET;
-            ContentType = "text/xml";
+            ContentType = "application/json";
             PostData = "";
         }
         public RestClient(string endpoint, HttpVerb method)
         {
             EndPoint = endpoint;
             Method = method;
-            ContentType = "text/xml";
+            ContentType = "application/json";
             PostData = "";
         }
 
@@ -45,7 +45,7 @@ namespace SquaresandRectangles.Service.Models
         {
             EndPoint = endpoint;
             Method = method;
-            ContentType = "text/xml";
+            ContentType = "application/json";
             PostData = postData;
         }
 

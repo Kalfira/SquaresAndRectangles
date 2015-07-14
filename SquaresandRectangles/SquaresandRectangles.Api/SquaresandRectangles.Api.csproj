@@ -139,7 +139,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\RedditController.cs" />
-    <Compile Include="Controllers\ZedController.cs" />
+    <Compile Include="Controllers\ZedClientController.cs" />
+    <Compile Include="Controllers\ZedHostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
