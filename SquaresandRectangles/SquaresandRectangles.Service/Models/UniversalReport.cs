@@ -6,9 +6,9 @@ namespace SquaresandRectangles.Service.Models
     {
         public IList<UniversalItem> UniversalItems { get; set; }
 
-        public UniversalReport()
-        {
-            UniversalItems = new List<UniversalItem>();
-        }
+        //public UniversalReport()
+        //{
+        //    UniversalItems = new List<UniversalItem>();
+        //}
     }
 }

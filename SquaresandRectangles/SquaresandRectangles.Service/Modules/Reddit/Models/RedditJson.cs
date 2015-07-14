@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using SquaresandRectangles.Service.Models;
+using System.Collections.Generic;
 
 namespace SquaresandRectangles.Service.Modules.Reddit.Models
 {
-    public class redditJsonMediaEmbed
+    public class redditJsonMediaEmbed : UniversalItem
     {
         public string content { get; set; }
         public int? width { get; set; }
@@ -10,7 +11,7 @@ namespace SquaresandRectangles.Service.Modules.Reddit.Models
         public int? height { get; set; }
     }
 
-    public class redditJsonOembed
+    public class redditJsonOembed : UniversalItem
     {
         public string provider_url { get; set; }
         public string description { get; set; }
@@ -26,13 +27,13 @@ namespace SquaresandRectangles.Service.Modules.Reddit.Models
         public int thumbnail_height { get; set; }
     }
 
-    public class redditJsonMedia
+    public class redditJsonMedia : UniversalItem
     {
         public string type { get; set; }
         public redditJsonOembed oembed { get; set; }
     }
 
-    public class redditJsonChildData
+    public class redditJsonChildData : UniversalItem
     {
         public string domain { get; set; }
         public object banned_by { get; set; }
@@ -70,13 +71,13 @@ namespace SquaresandRectangles.Service.Modules.Reddit.Models
         public int ups { get; set; }
     }
 
-    public class redditJsonChild
+    public class redditJsonChild : UniversalItem
     {
         public string kind { get; set; }
         public redditJsonChildData data { get; set; }
     }
 
-    public class redditJsonData
+    public class redditJsonData : UniversalItem
     {
         public string modhash { get; set; }
         public List<redditJsonChild> children { get; set; }
@@ -84,7 +85,7 @@ namespace SquaresandRectangles.Service.Modules.Reddit.Models
         public object before { get; set; }
     }
 
-    public class redditJson
+    public class redditJson : UniversalItem
     {
         public string kind { get; set; }
         public redditJsonData data { get; set; }

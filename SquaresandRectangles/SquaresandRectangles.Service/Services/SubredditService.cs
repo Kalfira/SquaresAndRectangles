@@ -20,11 +20,12 @@ namespace SquaresandRectangles.Service.Services
             UniversalReport report = new UniversalReport();
             foreach(var item in deserialized.data.children)
             {
-                var superitem = new UniversalItem
+                var superitem = new redditJsonChildData
                 {
-                    Content = item.data.title,
-                    Info1 = item.data.author,
-                    Info2 = item.data.url,
+                    author = item.data.author,
+                    subreddit = item.data.subreddit,
+                    permalink = item.data.permalink,
+                    title = item.data.title,
                     PostType = "r"
                 };
 
