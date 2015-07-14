@@ -13,11 +13,12 @@ namespace SquaresandRectangles.Api.Controllers
     {
         RedditCommentServ _comment = new RedditCommentServ();
 
-        public string GetComment()
-        {
-            return "No Comments.";
-        }
-        public UniversalReport GetComment(string perma)
+        //public string GetComment()
+        //{
+        //    return "No Comments.";
+        //}
+        [HttpPost]
+        public UniversalReport GetComment([FromBody]string perma)
         {
             var results = _comment.GetComments(perma);
 

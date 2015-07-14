@@ -25,7 +25,7 @@
                 redirectTo: '/'
             }).when('/comment', {
                 templateUrl: './views/comments.html',
-                controller: 'commentController',
+                controller: 'CommentController',
                 controllerAs: 'vm'
             }).otherwise({
                 redirectTo: '/'

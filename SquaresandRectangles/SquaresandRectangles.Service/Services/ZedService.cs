@@ -15,11 +15,11 @@ namespace SquaresandRectangles.Service.Services
             return deserialized;
         }
 
-        public UniversalReport ZedGetRepo()
-        {
-            var repo = new IGenericRepository();
-            var x = repo.GetRepo();
-        }
+        //public UniversalReport ZedGetRepo()
+        //{
+        //    var repo = new IGenericRepository();
+        //    var x = repo.GetRepo();
+        //}
     }
 
 }

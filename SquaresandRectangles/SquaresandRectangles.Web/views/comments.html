@@ -9,9 +9,35 @@
 
 </form>
 
-<table>
-    <tr ng-repeat="item in vm.message.UniversalItem">
+{{vm.title}}
+
+<!--<ul ng-repeat="item in vm.result">
+    <li>{{item}}</li>
+</ul>-->
+
+
+<!--<table>
+    <tr ng-repeat="item in vm.result">
         <td>"item.author"</td>
         <td><a ng-href="'http://localhost:1337/api/reddit/' + {{item.permalink}}">Comments</a></td>
     </tr>
+</table>-->
+
+<table ng-hide="vm.tableHidden" class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>Score</th>
+            <th>Vote Functions</th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in vm.result">
+            <td>{{item.InfoList[0].Name}}</td>
+            <td>{{item.InfoList[0].Data}}</td>
+            <td>{{item.VoteFunctions}}</td>
+            <td>{{item.Content}}</td>
+        </tr>
+    </tbody>
 </table>

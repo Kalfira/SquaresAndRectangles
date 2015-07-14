@@ -31,7 +31,7 @@
         function getZed() {
             var deferred = $q.defer();
             $http({
-                url: 'http://localhost:1337/z',
+                url: 'http://localhost:1337/zed',
                 method: 'GET'
             }).success(function (data) {
                 if (data) {

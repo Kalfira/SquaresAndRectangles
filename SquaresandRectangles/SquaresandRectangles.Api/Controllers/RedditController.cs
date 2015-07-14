@@ -8,6 +8,7 @@ namespace SquaresandRectangles.Api.Controllers
     public class RedditController : ApiController
     {
         readonly RedditService _reddit = new RedditService();
+        RedditCommentServ _comment = new RedditCommentServ();
 
         [Route("")]
         public string Get()
@@ -19,6 +20,19 @@ namespace SquaresandRectangles.Api.Controllers
         {
             //var results = _service.GetDemo(id);
             var results = _reddit.GetDemo(id);
+            return results;
+        }
+
+        [Route("comments")]
+        public string GetComment()
+        {
+            return "No Comments.";
+        }
+        [Route("comments/{perma}")]
+        public UniversalReport GetComment(string perma)
+        {
+            var results = _comment.GetComments(perma);
+
             return results;
         }
     }

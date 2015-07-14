@@ -67,6 +67,7 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <None Include=".bin\git.cmd" />
     <None Include=".bin\node.cmd" />
+    <Content Include="services\json1.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

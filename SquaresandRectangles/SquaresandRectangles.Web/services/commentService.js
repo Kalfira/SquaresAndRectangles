@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     angular.module('Zed')
-        .factory('CommentService', commentService);
+        .factory('commentService', commentService);
 
     function commentService($http, $q) {
         var service = {};
@@ -12,8 +12,9 @@
         function getResult(perma) {
             var deferred = $q.defer();
             $http({
-                url: 'http://localhost:1337/api/Comment/' + perma,
-                method: 'GET'
+                url: 'http://localhost:1337/api/Comment/',
+                data: perma,
+                method: 'POST'
             }).success(function (data) {
                 if (data) {
                     deferred.resolve(data);
