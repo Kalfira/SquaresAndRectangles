@@ -18,22 +18,10 @@ namespace SquaresandRectangles.Api.Controllers
         [Route("{id}")]
         public UniversalReport Get(string id)
         {
-            //var results = _service.GetDemo(id);
             var results = _reddit.GetDemo(id);
             return results;
         }
 
-        [Route("comments")]
-        public string GetComment()
-        {
-            return "No Comments.";
-        }
-        [Route("comments/{perma}")]
-        public UniversalReport GetComment(string perma)
-        {
-            var results = _comment.GetComments(perma);
 
-            return results;
-        }
     }
 }

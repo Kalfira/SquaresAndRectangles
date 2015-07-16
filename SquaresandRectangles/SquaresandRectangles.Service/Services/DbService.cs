@@ -5,7 +5,7 @@ namespace SquaresandRectangles.Service.Services
 {
     public class DbService : IDbService
     {
-        private readonly IGenericRepository _repo;
+        private IGenericRepository _repo;
 
         public DbService()
         {

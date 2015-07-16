@@ -8,17 +8,17 @@ namespace SquaresandRectangles.Api.Controllers
     public class ZedClientController : ApiController
     {
         private ZedService _service = new ZedService();
-        // GET: api/ZedClient
         [Route("")]
         public UniversalReport Get()
         {
             return _service.ZedDemo("http://localhost:1337/zed/key");
         }
 
-        // GET: api/ZedClient/5
-        public string Get(int id)
+        [Route("save")]
+        public string Save()
         {
-            return "value";
+
+            return "Not Implimented";
         }
 
         // POST: api/ZedClient
