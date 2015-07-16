@@ -17,9 +17,9 @@ namespace SquaresandRectangles.Service.Services
             return deserialized;
         }
 
-        public UniversalReport SaveDemo()
+        public void SaveDemo(string sr)
         {
-
+            var result = ZedDemo(sr);
             var thing = new Repo();
             _repo.Add(thing);
         }

@@ -14,10 +14,10 @@ namespace SquaresandRectangles.Api.Controllers
             return _service.ZedDemo("http://localhost:1337/zed/key");
         }
 
-        [Route("save")]
-        public string Save()
+        [Route("save/{sr}")]
+        public string Save(string sr)
         {
-
+            _service.SaveDemo(sr);
             return "Not Implimented";
         }
 

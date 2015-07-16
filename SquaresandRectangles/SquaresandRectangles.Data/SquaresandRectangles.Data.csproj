@@ -82,7 +82,9 @@
       <DependentUpon>201507051853235_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Entry.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IUniversalItem.cs" />
     <Compile Include="Models\Repo.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

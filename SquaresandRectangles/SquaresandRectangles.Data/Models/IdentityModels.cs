@@ -41,5 +41,6 @@ namespace SquaresandRectangles.Data.Models
         }
 
         public IDbSet<Repo> Repos { get; set; }
+        public IDbSet<Entry> Entries { get; set; }
     }
 }
