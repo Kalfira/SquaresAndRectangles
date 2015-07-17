@@ -19,11 +19,27 @@
                 </button>
                 <a href="#/" class="navbar-brand">Zed</a>
             </div>
-            <div class="navbar-collapse collapse" style="float: right;">
-                <ul class="nav navbar-nav">
-                    <li><a href="#/">Home</a></li>
+
+            <div class="navbar-collapse collapse" >
+                <div ng-hide="hasThirdParty()" class="btn-group" dropdown is-open="status.isopen">
+                    <button type="button"
+                            class="btn btn-primary dropdown-toggle"
+                            dropdown-toggle
+                            ng-disabled="disabled">
+                        Button dropdown <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="item in thirdParty()"> <a ng-href="{{item.InfoList[1].Data}}">{{item.Content}}</a></li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav" style="float: right;">
+                    <li> <a href="#/">Home</a></li>
                     <li ng-hide="isLoggedIn()"><a href="#/logout">Logout</a></li>
-                    <li ng-hide="isLoggedOut()"><a href="#/login">Login</a></li>
+                    <li ng-hide="!isLoggedIn()"><a href="#/login">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -39,6 +55,7 @@
     <script src="/Scripts/bootstrap.js"></script>
     <script src="/Scripts/angular.min.js"></script>
     <script src="/Scripts/angular-route.js"></script>
+    <script src="/Scripts/angular-ui/ui-bootstrap.js"></script>
     <script src="/app.js"></script>
     <script src="controllers/demoController.js"></script>
     <script src="controllers/indexController.js"></script>

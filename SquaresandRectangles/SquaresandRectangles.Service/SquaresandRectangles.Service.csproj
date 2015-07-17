@@ -140,6 +140,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RedditSharp\RedditSharp.csproj">
+      <Project>{a368cb75-75f0-4489-904d-b5cebb0fe624}</Project>
+      <Name>RedditSharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SquaresandRectangles.Data\SquaresandRectangles.Data.csproj">
       <Project>{a40f41bf-29c2-49e9-b5ec-5e87ef805558}</Project>
       <Name>SquaresandRectangles.Data</Name>

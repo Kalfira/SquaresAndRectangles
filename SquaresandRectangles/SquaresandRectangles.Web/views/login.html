@@ -1,7 +1,22 @@
-﻿<div>
+﻿
+
+<h2>Login to Zed:</h2>
+
+<div>
     <form novalidate ng-submit="vm.login()">
-        Username: <input ng-model="vm.username" /><br />
-        Password: <input ng-model="vm.password" type="password" /><br /><br />
+        Username: <input ng-model="vm.username"/><br/>
+        Password: <input ng-model="vm.password" type="password"/><br/><br/>
+
+        <input type="submit" value="Login"/>
+    </form>
+</div>
+
+<h2>Login to reddit:</h2>
+
+<div>
+    <form novalidate ng-submit="vm.redditLogin()">
+        Username: <input ng-model="vm.reddituser" /><br />
+        Password: <input ng-model="vm.redditpass" type="password" /><br /><br />
 
         <input type="submit" value="Login" />
     </form>

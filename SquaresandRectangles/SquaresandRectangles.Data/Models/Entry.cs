@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SquaresandRectangles.Data.Models
 {
-    class Entry
+    public class Entry
     {
         [Key]
         public int Id { get; set; }

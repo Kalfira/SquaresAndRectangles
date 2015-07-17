@@ -33,19 +33,20 @@ namespace SquaresandRectangles.Service.Models
             ContentType = "application/json";
             PostData = "";
         }
-        public RestClient(string endpoint, HttpVerb method)
+
+        public RestClient(string endpoint, string postData)
         {
             EndPoint = endpoint;
-            Method = method;
+            Method = HttpVerb.POST;
             ContentType = "application/json";
-            PostData = "";
+            PostData = postData;
         }
 
-        public RestClient(string endpoint, HttpVerb method, string postData)
+        public RestClient(string endpoint, string postData, string type)
         {
             EndPoint = endpoint;
-            Method = method;
-            ContentType = "application/json";
+            Method = HttpVerb.POST;
+            ContentType = type;
             PostData = postData;
         }
 

@@ -2,15 +2,20 @@
 using SquaresandRectangles.Service.Models;
 using SquaresandRectangles.Service.Modules.Reddit.Models;
 using System.Collections.Generic;
+using RedditSharp;
+using RedditSharp.Things;
 
 namespace SquaresandRectangles.Service.Services
 {
     public class RedditService
     {
-        readonly RestClient _client = new RestClient("http://reddit.com/r/");
+        //TODO:
+        readonly Reddit _reddit = new Reddit();
+        readonly RestClient _client = new RestClient();
         public UniversalReport GetDemo(string url)
         {
-            url = url + ".json";
+            url = "http://reddit.com/r/" + url + ".json";
+            _client.Method = HttpVerb.GET;
             var result = _client.MakeRequest(url);
             var deserialized = JsonConvert.DeserializeObject<redditJson>(result);
             UniversalReport report = new UniversalReport();
@@ -32,6 +37,12 @@ namespace SquaresandRectangles.Service.Services
             }
 
             return report;
+        }
+
+        public AuthenticatedUser Login(string username, string password)
+        {
+            var user = _reddit.LogIn(username, password);
+            return user;
         }
     }
 }

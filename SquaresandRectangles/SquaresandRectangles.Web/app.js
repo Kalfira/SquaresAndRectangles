@@ -1,6 +1,6 @@
 ﻿(function() {
     'use strict';
-    angular.module('Zed', ['ngRoute']).config(Config);
+    angular.module('Zed', ['ngRoute', 'ui.bootstrap']).config(Config);
 
     function Config($routeProvider) {
         $routeProvider.when('/', {

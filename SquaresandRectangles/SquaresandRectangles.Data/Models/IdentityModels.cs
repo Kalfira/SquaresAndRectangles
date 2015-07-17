@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -40,7 +39,7 @@ namespace SquaresandRectangles.Data.Models
             return new ApplicationDbContext();
         }
 
-        public IDbSet<Repo> Repos { get; set; }
-        public IDbSet<Entry> Entries { get; set; }
+        //public IDbSet<Repo> Repos { get; set; }
+        //public IDbSet<Entry> Entries { get; set; }
     }
 }

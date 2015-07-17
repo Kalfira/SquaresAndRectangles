@@ -9,7 +9,9 @@
         service.login = login;
         service.logout = logout;
         service.isLoggedIn = isLoggedIn;
-        service.isLoggedOut = isLoggedOut;
+        service.redditLogin = redditLogin;
+        service.thirdParty = null;
+        service.getThirdParty = getThirdParty;
 
         function login(username, password) {
             var deferred = $q.defer();
@@ -31,6 +33,7 @@
 
         function logout() {
             $window.sessionStorage.removeItem('token');
+            service.thirdParty = null;
         }
 
         function isLoggedIn() {
@@ -42,13 +45,29 @@
             }
         }
 
-        function isLoggedOut() {
-            var loggedIn = $window.sessionStorage.getItem('token');
-            if (loggedIn) {
-                return false;
-            } else {
-                return true;
-            }
+        function redditLogin(postData) {
+            var deferred = $q.defer();
+            $http({
+                url: 'http://localhost:1337/r/login',
+                method: 'POST',
+                data: postData,
+            }).success(function (data) {
+                //$window.sessionStorage.setItem('redditToken', data);
+                if (service.thirdParty === null) {
+                    service.thirdParty = [data];
+                } else {
+                    service.thirdParty.push(data);
+                }
+                console.log(data);
+                deferred.resolve();
+            }).error(function (err) {
+                console.log(err);
+                deferred.reject();
+            });
+            return deferred.promise;
+        }
+        function getThirdParty(callback) {
+            callback(service.thirdParty);
         }
         return service;
     }
