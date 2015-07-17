@@ -1,9 +1,7 @@
-﻿using Newtonsoft.Json;
-using SquaresandRectangles.Service.Models;
-using SquaresandRectangles.Service.Modules.Reddit.Models;
-using System.Collections.Generic;
-using RedditSharp;
+﻿using RedditSharp;
 using RedditSharp.Things;
+using SquaresandRectangles.Service.Models;
+using System.Collections.Generic;
 
 namespace SquaresandRectangles.Service.Services
 {
@@ -11,23 +9,24 @@ namespace SquaresandRectangles.Service.Services
     {
         //TODO:
         readonly Reddit _reddit = new Reddit();
-        readonly RestClient _client = new RestClient();
         public UniversalReport GetDemo(string url)
         {
-            url = "http://reddit.com/r/" + url + ".json";
-            _client.Method = HttpVerb.GET;
-            var result = _client.MakeRequest(url);
-            var deserialized = JsonConvert.DeserializeObject<redditJson>(result);
+            var sub = _reddit.GetSubreddit("/r/" + url);
+            var posts = sub.Posts.GetListing(25);
             UniversalReport report = new UniversalReport();
-            foreach (var item in deserialized.data.children)
+            foreach (var item in posts)
             {
                 var superitem = new UniversalItem
                 {
-                    Content = item.data.url,
+                    Content = item.Url.ToString(),
                     InfoList = new List<IUniversalItemInfo>{ new UniversalItemInfo
                     {
-                        Data = item.data.subreddit,
-                        Name = item.data.title,
+                        Data = item.Title,
+                        Name = "Title"
+                    }, new UniversalItemInfo
+                    {
+                        Data = item.AuthorName,
+                        Name = "Author",
                     }},
                     PostType = "r",
                     VoteFunctions = "Reddit"
